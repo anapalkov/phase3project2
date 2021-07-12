@@ -1,35 +1,40 @@
-function displayItem({product}){
+function displayItem({props}){
 
-    let {id, name, image, price} = product
-
-    // let handleDelete = (e) => {
-    //     fetch(`http://localhost:9292/toys/${id}`, {
-    //         method: "DELETE"
-    //     })
-    //         .then(res => res.json())
-    //         .then(() => {
-    //             deleteToy(id)
-    //         })
-    // }
+    let {id, name, image, price} = props
 
 
-    // WRITE A HANDLE ADD TO CART
+  // WRITE A handleAddToCart
 
-    // let handleLike = (e) => {
-    //     fetch(`http://localhost:9292/toys/${id}`, {
-    //         method: "PATCH",
-    //         headers: {
-    //             "Content-type": "application/json"
-    //         },
-    //         body: JSON.stringify({
-    //             likes: likes + 1
-    //         })
-    //     })
-    //         .then(res => res.json())
-    //         .then((updatedToy) => {
-    //             updateToy(updatedToy)
-    //         })
-    // }
+
+    let handleDelete = (e) => {
+        fetch(`http://localhost:9292/toys/${id}`, {
+            method: "DELETE"
+        })
+            .then(res => res.json())
+            .then(() => {
+                deleteToy(id)
+            })
+    }
+
+
+  
+
+    let handleLike = (e) => {
+        fetch(`http://localhost:9292/toys/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify({
+                likes: likes + 1
+            })
+        })
+            .then(res => res.json())
+            .then((updatedToy) => {
+                updateToy(updatedToy)
+            })
+    }
+
 
 
     return (

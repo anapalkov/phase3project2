@@ -22,4 +22,12 @@ class ApplicationController < Sinatra::Base
     "Hello from Sinatra";
   end
 
+  get '/products' do
+    Product.all.to_json
+  end
+
+  get '/categories' do
+    Category.all.to_json
+  end
+
 end

@@ -1,3 +1,9 @@
 import React from 'react';
 
-<h1>Flatiron Store!</h1>
+function Header (){
+
+return <h5>Flatiron Store!</h5>
+
+}
+
+export default Header

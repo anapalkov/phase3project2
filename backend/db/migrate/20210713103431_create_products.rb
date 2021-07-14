@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :name
       t.float :price
 
-      t.integer :user_id
+      # t.integer :user_id
     end
   end
 end

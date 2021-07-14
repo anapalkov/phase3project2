@@ -1,13 +1,12 @@
 import React from "react";
 
-function Item({name, price}){
-
-
+function Item({id, name, price}){
 
     return (
         <div className="card">
           <ul>
-            <li>{name} {price} <button>Add to the card</button></li>
+            {/* create table to render the items nicely.  */}
+            <li>{id} || {name} || {price}</li>
           </ul>
         </div>
       )
@@ -20,11 +19,6 @@ export default Item
 
   // By clicking on the add to the cart, a temporary array of state should hold the date, once clicked on the purchase button will
   //submit to the database.
-
-
-
-
-
 
 
     // let handleDelete = (e) => {

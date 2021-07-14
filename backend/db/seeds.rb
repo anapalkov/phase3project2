@@ -4,7 +4,7 @@ Product.destroy_all
 Category.destroy_all
 ProductCategory.destroy_all
 Order.destroy_all
-OrderProduct.destroy_all
+p 'Deleted old data'
 
 # user
 u1 = User.create(full_name: "James Khan")

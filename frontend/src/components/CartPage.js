@@ -1,3 +1,9 @@
 // import React from 'react';
 
-// // Contains Header + NavBar + ItemContainer + Item
+// /ItemContainer + Item
+
+function CartPage() {
+    return <div>Cart Page</div>
+}
+
+export default CartPage;

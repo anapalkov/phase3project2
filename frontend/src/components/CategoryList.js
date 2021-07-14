@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './Header'
-import NavBar from './NavBar'
 
 import Search from './Search'
 import CategoryContainer from './CategoryContainer'
@@ -25,8 +24,6 @@ function ProductListPage() {
 
     return (
         <div>
-            <Header />
-            <NavBar />
             
             <h1>Category List Page</h1>
             <Search setSearch={setSearch}/>

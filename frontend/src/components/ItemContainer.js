@@ -7,10 +7,15 @@ function ItemContainer({products}){
 
      
     return (
+    
     <div>
      <h5>Item Container</h5>
-        {products.map(product => <Item key={product.id} {...product}/>) }
+        {
+        //<Item key= {products.first.id}{...products.first}/>
+        products.map(product => <Item key={product.id} {...product}/>)
+        }
      </div>
+
      )
 
 }

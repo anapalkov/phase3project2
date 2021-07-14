@@ -1,6 +1,19 @@
-function Item({props}){
+import React from "react";
 
-    let {id, name, image, price} = props
+function Item({name, price}){
+
+
+
+    return (
+        <div className="card">
+          <ul>
+            <li>{name} {price}</li>
+          </ul>
+        </div>
+      )
+}
+
+export default Item
 
 
   // WRITE A handleAddToCart
@@ -39,18 +52,3 @@ function Item({props}){
     //             updateToy(updatedToy)
     //         })
     // }
-
-
-
-    // return (
-    //     <div className="card">
-    //       <h2>{name}</h2>
-    //       <img src={image} alt={name} className="toy-avatar" />
-    //       <p>{likes} Likes </p>
-    //       <button className="like-btn" onClick={handleLike}>Like {'<3'}</button>
-    //       <button className="del-btn" onClick={handleDelete}>Donate to GoodWill</button>
-    //     </div>
-    //   )
-}
-
-export default Item

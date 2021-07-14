@@ -3,18 +3,18 @@ import Item from './Item'
 
 // for loop displaying filtered (?) items list
 
-function ItemContainer({props}){
+function ItemContainer({products}){
 
      
-    return (<div>
-
+    return (
+    <div>
      <h5>Item Container</h5>
-     {/* let itemList = props.map(product => <Item product={product}/>) */}
-
-     </div>)
+        {products.map(product => <Item key={product.id} {...product}/>) }
+     </div>
+     )
 
 }
 
 export default ItemContainer
 
-// where does the search bar go?
+// where does the search bar go? Nightclub.

@@ -33,5 +33,33 @@ class ApplicationController < Sinatra::Base
     Order.all.to_json
   end
 
+  get '/users' do
+    User.all.to_json
+  end
+
+  post "/neworder" do 
+    #binding.pry
+    order = Order.create(
+      user_id: params[:user_id], 
+      product_id: params[:product_id]
+    )
+    #binding.pry
+    #order.to_json(include: [:user_id, :product_id])
+    #binding.pry
+    order.to_json
+  end
+
+  get "/users/:id/orders" do 
+    user = User.find(params[:id])
+    if user
+      user.orders.to_json(include: [:product])
+    else
+      {error: "User not found"}.to_json
+    end
+  end
 
 end
+
+
+# https://hackmd.io/@dlm/testing-your-sinatra-api
+# https://github.com/DakotaLMartinez/sinatra_api_crud/tree/solution

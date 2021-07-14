@@ -7,7 +7,7 @@ function Item({name, price}){
     return (
         <div className="card">
           <ul>
-            <li>{name} {price}</li>
+            <li>{name} {price} <button>Add to the card</button></li>
           </ul>
         </div>
       )
@@ -17,6 +17,9 @@ export default Item
 
 
   // WRITE A handleAddToCart
+
+  // By clicking on the add to the cart, a temporary array of state should hold the date, once clicked on the purchase button will
+  //submit to the database.
 
 
 

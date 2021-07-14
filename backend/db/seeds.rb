@@ -45,16 +45,16 @@ ProductCategory.create(product_id: p3.id, category_id: c3.id)
 ProductCategory.create(product_id: p4.id, category_id: c2.id)
 
 # Order user
-o1 = Order.create(user_id: u1.id) 
-o2 = Order.create(user_id: u3.id) 
-o3 = Order.create(user_id: u4.id) 
-o4 = Order.create(user_id: u2.id) 
+o1 = Order.create(user_id: u1.id, product_id: p1.id) 
+o2 = Order.create(user_id: u3.id, product_id: p2.id) 
+o3 = Order.create(user_id: u4.id, product_id: p3.id)
+o4 = Order.create(user_id: u2.id, product_id: p4.id) 
 
 # Order Product
-OrderProduct.create(order_id: o1.id, product_id: p4.id)
-OrderProduct.create(order_id: o2.id, product_id: p2.id)
-OrderProduct.create(order_id: o3.id, product_id: p1.id)
-OrderProduct.create(order_id: o4.id, product_id: p3.id)
+# OrderProduct.create(order_id: o1.id, product_id: p4.id)
+# OrderProduct.create(order_id: o2.id, product_id: p2.id)
+# OrderProduct.create(order_id: o3.id, product_id: p1.id)
+# OrderProduct.create(order_id: o4.id, product_id: p3.id)
 
 
 # Pry.start

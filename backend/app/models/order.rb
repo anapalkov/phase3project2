@@ -4,6 +4,6 @@ class Order < ActiveRecord::Base
     # has_many :order_products
     # has_many :products, through: :order_products
 
-    has_many :orders
-    has_many :users, through: orders
+    # belongs_to :product
+    # belongs_to :user
 end

@@ -9,7 +9,6 @@ import {useState, useEffect} from 'react'
 function ProductListPage() {
   const [products, setProducts] = useState([]);
   const [searchText, setSearch] = useState("")
-  
   useEffect(() => {
       fetch("http://localhost:9393/products")
       .then(r => r.json())
@@ -21,8 +20,6 @@ function ProductListPage() {
 
  return (
       <div>
-
-        
         <h5>Product List Page</h5>
         <Search setSearch={setSearch}/>
         <ItemContainer products/>          

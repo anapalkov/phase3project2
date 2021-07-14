@@ -22,7 +22,7 @@ function ProductListPage() {
       <div>
         <h5>Product List Page</h5>
         <Search setSearch={setSearch}/>
-        <ItemContainer products/>          
+        <ItemContainer products = {products}/>          
       </div> )
   
 }

@@ -1,12 +1,19 @@
 import React from "react";
+ import { BrowserRouter as Router, Switch, Route, Link, useRouteMatch, useParams} from "react-router-dom";
 
 function Item({id, name, price}){
 
+  // let match = useRouteMatch();
+
     return (
         <div className="card">
-          <ul>
-            {/* create table to render the items nicely.  */}
-            <li>{id} || {name} || {price}</li>
+          <h1>{id}</h1>
+          
+        <ul>
+          <li>
+            <Link to={`/item/${id}`}>{name}</Link>
+            
+            </li>
           </ul>
         </div>
       )

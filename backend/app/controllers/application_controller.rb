@@ -16,7 +16,6 @@ class ApplicationController < Sinatra::Base
 
   # method "URL" do
 
-  # end
 
   get '/' do
     "Hello from Sinatra";

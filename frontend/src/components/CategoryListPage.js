@@ -9,9 +9,9 @@ import {useState, useEffect} from 'react'
 // Contains Header + Categories Filter + Search Bar + NavBar + ItemContainer
 // will need a way to populate products from database and pass as a prop
 
-function ProductListPage() {
+function CategoryListPage() {
     const [categories, setCategories] = useState([]);
-    const [searchText, setSearch] = useState("")
+
     
     useEffect(() => {
         fetch("http://localhost:9393/categories")
@@ -26,10 +26,10 @@ function ProductListPage() {
         <div>
             
             <h1>Category List Page</h1>
-            <Search setSearch={setSearch}/>
+
             <CategoryContainer categories={categories}/>
         </div> 
         )
   }
   
-  export default ProductListPage;
+  export default CategoryListPage;

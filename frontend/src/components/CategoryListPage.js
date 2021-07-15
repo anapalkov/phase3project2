@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header'
 
 import Search from './Search'
-import CategoryContainer from './CategoryContainer'
+
 
 import {useState, useEffect} from 'react'
 
@@ -11,6 +11,8 @@ import {useState, useEffect} from 'react'
 
 function CategoryListPage(props) {
     const [categories, setCategories] = useState([]);
+
+    const [products, setProducts] = useState([]);
 
     
     useEffect(() => {
@@ -22,14 +24,33 @@ function CategoryListPage(props) {
         })
     }, [])
 
+    //display products by category id
+    function handleChange(event) {
+        // console.log(event.target)
+        const select = event.target;
+        const id = select.children[select.selectedIndex].id;
+        
+        fetch(`http://localhost:9393/cat/${id}/prods`)
+        .then(r => r.json())
+        .then(data => {
+            console.log("product",data);
+            setProducts(data);
+        })
+      }
+
+
     return (
         <div>
             
-            <h1>Category List Page</h1>
+        <h1>Category List Page</h1>
+            <select onChange={handleChange}>
+                {categories.map(category => <option key={category.id} id ={category.id} >{category.name}</option>)}
+          </select>
 
-            <CategoryContainer categories={categories}/>
+          {products.length > 0? products.map(cat => <li key={cat.id}> {cat.product.name}</li>) : <p>No products</p>}
+
         </div> 
-        )
+    )
   }
   
   export default CategoryListPage;

@@ -16,9 +16,28 @@ function CartPage() {
     return ( 
         <div>
         <h1>CART</h1>
-        {users.map((user) => <User key={user.id} {...user}/>)}
-        {/* <select >
+        
+         {users.map((user) => <User key={user.id} {...user}/>)}
+       
+       
+       
+        {/* {<select>
+        <option value="test22">test2</option>
+        <option value="test33">test3</option>
+        <option value="test44">test4</option>
+        <option value="test55">test5</option>
+        </select>
+         */}
+        
+        
+        /* <select >
             {users.map((user) => <option key={user.id}>{user.full_name}</option>)}
+
+        {/* event listener that gets option */}
+
+
+
+
         </select>; */}
             {/* <select>
                 <option value="grapefruit">Grapefruit</option>

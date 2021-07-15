@@ -58,6 +58,22 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+
+  get "/user/:id/products/" do 
+    user = User.find(params[:id])
+    if user
+      puts user.id
+      # Pry.start
+      user.orders.to_json(include: [:product])
+    else
+      {error: "User not found"}.to_json
+    end
+  end
+
+
+
+
+
 end
 
 

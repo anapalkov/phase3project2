@@ -18,7 +18,7 @@ export default function UserProduct({id, full_name}) {
     return (
         <div>
             <span>
-                <li onClick={e => test(e.target)}>{full_name}</li>
+                <li onClick={e => test(e.target)}>{id} {full_name}</li>
             </span>
             { getProducts.length > 0? <select> {getProducts.map((product) => <option key={product.id}>{product.product.name}</option>)} </select>:null }
         </div>

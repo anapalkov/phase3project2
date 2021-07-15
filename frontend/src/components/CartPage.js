@@ -44,12 +44,7 @@ function CartPage() {
         
         <select onChange={e => test(e)}>
             {users.map((user) => <option key={user.id}>{user.full_name} </option>)} 
-
-         
-
-
-
-
+   
         </select>
             
             {/* whenever this changes we must send a fetch request to local... /orders/user.id/ */}

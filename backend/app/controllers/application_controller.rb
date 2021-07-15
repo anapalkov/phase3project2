@@ -82,8 +82,19 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-
-
+  get "/cat/:id/prods" do
+    # Product.all.to_json;
+    category = Category.find(params[:id])
+    # product.to_json
+    # # binding.pry
+    if category
+      # product.to_json
+    #   Pry.start
+      category.product_categories.to_json(include: [:product])
+    else
+      {error: "Category not found"}.to_json
+    end
+  end
 
 
 

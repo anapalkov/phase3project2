@@ -11,6 +11,9 @@ import './App.css';
 function App() {
 
   const [products, setProducts] = useState([]);
+  
+  const [categories, setCategories] = useState([]); //state
+
     useEffect(() => {
       fetch("http://localhost:9393/products")
       .then(r => r.json())
@@ -19,6 +22,8 @@ function App() {
           setProducts(data);
       })
   }, [])
+
+  
 
   
   return (
@@ -37,7 +42,7 @@ function App() {
         <Switch>
           
           <Route path="/categories">
-            <CategoryListPage />
+            <CategoryListPage data/>
           </Route>
 
           <Route path="/cart">

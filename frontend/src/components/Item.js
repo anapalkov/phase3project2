@@ -7,14 +7,11 @@ function Item({id, name, price}){
 
     return (
         <div className="card">
-          <h1>{id}</h1>
           
-        <ul>
-          <li>
+          <span>
             <Link to={`/item/${id}`}>{name}</Link>
             
-            </li>
-          </ul>
+            </span>
         </div>
       )
 }

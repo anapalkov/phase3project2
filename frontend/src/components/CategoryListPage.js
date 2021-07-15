@@ -9,7 +9,7 @@ import {useState, useEffect} from 'react'
 // Contains Header + Categories Filter + Search Bar + NavBar + ItemContainer
 // will need a way to populate products from database and pass as a prop
 
-function CategoryListPage() {
+function CategoryListPage(props) {
     const [categories, setCategories] = useState([]);
 
     

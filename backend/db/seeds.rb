@@ -49,6 +49,7 @@ o1 = Order.create(user_id: u1.id, product_id: p1.id)
 o2 = Order.create(user_id: u3.id, product_id: p2.id) 
 o3 = Order.create(user_id: u4.id, product_id: p3.id)
 o4 = Order.create(user_id: u2.id, product_id: p4.id) 
+o5 = Order.create(user_id: u1.id, product_id: p1.id) 
 
 # Order Product
 # OrderProduct.create(order_id: o1.id, product_id: p4.id)

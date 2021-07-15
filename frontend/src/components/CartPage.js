@@ -1,6 +1,9 @@
 import React from 'react'
-import User from './User'
+import UserProduct from './UserProduct'
 import {useState, useEffect} from 'react'
+
+
+
 function CartPage() {   
     // fetch list of users from backend
     const [users, setUsers] = useState([])
@@ -13,11 +16,20 @@ function CartPage() {
             setUsers(data);
         })
     }, [])
+
+    function test(e) {
+        console.log(e.target.value)
+        // debugger
+    }
+    
+    
+    
+    
     return ( 
         <div>
         <h1>CART</h1>
         
-         {users.map((user) => <User key={user.id} {...user}/>)}
+         {users.map((user) => <UserProduct key={user.id} {...user}/>)}
        
        
        
@@ -30,15 +42,20 @@ function CartPage() {
          */}
         
         
-        /* <select >
-            {users.map((user) => <option key={user.id}>{user.full_name}</option>)}
+        <select onChange={e => test(e)}>
+            {users.map((user) => <option key={user.id}>{user.full_name} </option>)} 
 
-        {/* event listener that gets option */}
-
-
+         
 
 
-        </select>; */}
+
+
+        </select>
+            
+            {/* whenever this changes we must send a fetch request to local... /orders/user.id/ */}
+
+
+
             {/* <select>
                 <option value="grapefruit">Grapefruit</option>
                 <option value="lime">Lime</option>

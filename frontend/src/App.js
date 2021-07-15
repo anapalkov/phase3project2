@@ -26,19 +26,14 @@ function App() {
     <Router>
       <div>
         <Header />
-        <ul>
-          <li>
-            <Link to="/">Product List</Link>
-          </li>
-          <li>
-            <Link to="/categories">Category List</Link>
-          </li>
-          <li>
-            <Link to="/cart">Cart</Link>
-          </li>
-        
-        </ul>
 
+          <span><Link to="/">Product List</Link> </span><br/>
+
+          <span> <Link to="/categories">Category List</Link></span><br/>
+
+          <span><Link to="/cart">Cart</Link></span><br/>
+
+           
         <Switch>
           
           <Route path="/categories">

@@ -6,6 +6,8 @@ class ApplicationController < Sinatra::Base
     set :allow_origin, "*"
     set :allow_methods, [:get, :post, :patch, :delete, :options] # allows these HTTP verbs
     set :expose_headers, ['Content-Type']
+    enable :sessions
+    set :session_secret, "my_security"
   end
 
   options "*" do
@@ -18,7 +20,16 @@ class ApplicationController < Sinatra::Base
 
 
   get '/' do
-    "Hello from Sinatra";
+    User.all.to_json
+  end
+
+  helpers do
+    def logged_in?
+      !!session[:user_id]
+    end
+    def current_user
+      User.find(session[:user_id])
+    end
   end
 
   get '/products' do
@@ -95,6 +106,8 @@ class ApplicationController < Sinatra::Base
       {error: "Category not found"}.to_json
     end
   end
+
+
 
 
 

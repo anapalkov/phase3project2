@@ -4,7 +4,7 @@ Product.destroy_all
 Category.destroy_all
 ProductCategory.destroy_all
 Order.destroy_all
-p 'Deleted old data'
+# p 'Deleted old data'
 
 # user
 u1 = User.create(full_name: "James Khan")
@@ -21,6 +21,7 @@ p4 = Product.create(name: "Washing Machine", price: 1300.9)
 p5 = Product.create(name: "Computer Desk", price: 700.9)
 p5 = Product.create(name: "Sofa", price: 700.9)
 p6 = Product.create(name: "Rockies", price: 17000.3)
+p7 = Product.create(name: "Dish Washer", price: 1300.9)
 
 # p1 = Product.create(name: "iPhone12", price: 1200.9, user_id: u1.id)
 # p2 = Product.create(name: "iPhoneX", price: 800.9, user_id: u2.id)
@@ -36,20 +37,30 @@ c1 = Category.create(name: "Technology")
 c2 = Category.create(name: "Furniture")
 c3 = Category.create(name: "Appliances")
 c4 = Category.create(name: "Leisure")
+c5 = Category.create(name: "Smart-Phone")
+
 
 # user relationship
 ProductCategory.create(product_id: p1.id, category_id: c1.id)
-ProductCategory.create(product_id: p1.id, category_id: c2.id)
 ProductCategory.create(product_id: p2.id, category_id: c1.id)
-ProductCategory.create(product_id: p3.id, category_id: c3.id)
-ProductCategory.create(product_id: p4.id, category_id: c2.id)
+ProductCategory.create(product_id: p3.id, category_id: c1.id)
+
+ProductCategory.create(product_id: p4.id, category_id: c3.id)
+ProductCategory.create(product_id: p7.id, category_id: c3.id)
+
+ProductCategory.create(product_id: p5.id, category_id: c2.id)
+
+ProductCategory.create(product_id: p1.id, category_id: c5.id)
+ProductCategory.create(product_id: p2.id, category_id: c5.id)
 
 # Order user
 o1 = Order.create(user_id: u1.id, product_id: p1.id) 
 o2 = Order.create(user_id: u3.id, product_id: p2.id) 
 o3 = Order.create(user_id: u4.id, product_id: p3.id)
 o4 = Order.create(user_id: u2.id, product_id: p4.id) 
-o5 = Order.create(user_id: u1.id, product_id: p1.id) 
+o5 = Order.create(user_id: u1.id, product_id: p4.id) 
+o6 = Order.create(user_id: u1.id, product_id: p3.id) 
+
 
 # Order Product
 # OrderProduct.create(order_id: o1.id, product_id: p4.id)

@@ -10,7 +10,7 @@ function ItemPage(props){
     // post request to backend
 
     let orderObj = {
-      user_id: 10,
+      user_id: 28,
       product_id: props.currentItem.id
     }
       fetch(`http://localhost:9393/neworder`, {

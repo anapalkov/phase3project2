@@ -7,7 +7,11 @@ import {useState, useEffect} from 'react'
 function CartPage() {   
     // fetch list of users from backend
     const [users, setUsers] = useState([])
+    const [getProducts, setProducts] = useState([]);
+
+    
     const [filterUser, setFilterUser] = useState([])
+
     useEffect(() => {
         fetch("http://localhost:9393/users")
         .then(r => r.json())
@@ -17,46 +21,33 @@ function CartPage() {
         })
     }, [])
 
-    function test(e) {
-        console.log(e.target.value)
-        // debugger
-    }
+    function handleChange(event) {
+        // console.log(event.target)
+        const select = event.target;
+        const id = select.children[select.selectedIndex].id;
     
+        fetch(`http://localhost:9393/user/${id}/products/`)
+        .then(r => r.json())
+        .then(data => {
+            // console.log("Orders",data);
+            setProducts(data);
+        })
     
+      }
     
     
     return ( 
         <div>
         <h1>CART</h1>
         
-         {users.map((user) => <UserProduct key={user.id} {...user}/>)}
-       
-       
-       
-        {/* {<select>
-        <option value="test22">test2</option>
-        <option value="test33">test3</option>
-        <option value="test44">test4</option>
-        <option value="test55">test5</option>
-        </select>
-         */}
-        
-        
-        <select onChange={e => test(e)}>
-            {users.map((user) => <option key={user.id}>{user.full_name} </option>)} 
-   
-        </select>
+         {/* {users.map((user) => <UserProduct key={user.id} {...user}/>)} */}   
+         <select onChange={handleChange}>
+            {users.map(u => <option key={u.id} id ={u.id} >{u.full_name}</option>)}
+          </select>
+      
+        { getProducts.length > 0? getProducts.map((product) => <li key={product.id}>{product.product.name}</li>)  : <p>No products in this cart.</p> }
+
             
-            {/* whenever this changes we must send a fetch request to local... /orders/user.id/ */}
-
-
-
-            {/* <select>
-                <option value="grapefruit">Grapefruit</option>
-                <option value="lime">Lime</option>
-                <option selected value="coconut">Coconut</option>
-                <option value="mango">Mango</option>
-            </select> */}
         </div>
     )
 }

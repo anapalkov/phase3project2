@@ -5,6 +5,7 @@ import CategoryListPage from './components/CategoryListPage';
 import Header from './components/Header'
 import CartPage from './components/CartPage'
 import ItemPage from './components/ItemPage'
+import UsersList from "./components/UsersList";
 
 import './App.css';
 
@@ -35,12 +36,18 @@ function App() {
           <span><Link to="/">Product List</Link> </span><br/>
 
           <span> <Link to="/categories">Category List</Link></span><br/>
+          
+          <span><Link to="/users">Users</Link></span><br/>
 
           <span><Link to="/cart">Cart</Link></span><br/>
 
            
         <Switch>
-          
+          //new addition
+          <Route exact path="/users">
+            <UsersList />
+          </Route>
+
           <Route path="/categories">
             <CategoryListPage data/>
           </Route>
